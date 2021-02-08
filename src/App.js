@@ -146,10 +146,6 @@ class App extends Component {
       '"Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"'
     );
     myHeaders.append("content-type", "application/json");
-    // myHeaders.append(
-    //   "x-notion-active-user-header",
-    //   "32dc3c78-578e-49ad-9651-760370deecae"
-    // );
     myHeaders.append("sec-ch-ua-mobile", "?0");
     myHeaders.append(
       "user-agent",
@@ -180,7 +176,7 @@ class App extends Component {
         createdTime: {},
       },
       sort: "Relevance",
-      limit: 20,
+      limit: 100,
       spaceId: await this.getSpaceId(),
       source: "trash",
     });
@@ -222,10 +218,9 @@ class App extends Component {
         className="container-fluid d-flex flex-column text-center"
         style={{ padding: " 2em 4em", fontFamily: "Inter" }}
       >
-        <h3 className="">Notion Empty Trash</h3>
-        <p>
-          Click the button below to empty your Notion trash with just one click!
-        </p>
+        <h3 className="">Notion Trashman</h3>
+        <p style={{ color: "gray" }}>Bulk Notion Trash Deleter</p>
+        <p>Click the button below to empty your Notion trash!</p>
         <div
           className=""
           style={buttonStyle}
@@ -261,24 +256,23 @@ class App extends Component {
         )}
 
         <p style={{ marginTop: "3em" }}></p>
-
-        <a
-          href="https://www.buymeacoffee.com/sakethr"
-          style={{ color: "#ffdd00" }}
-        >
-          Buy me a coffee
-        </a>
-
         <p
           style={{
             padding: "1em",
-            fontSize: "0.65em",
+            fontSize: "0.75em",
             color: "#2eaadc",
           }}
         >
-          * Notion: If you're reading this, I just want to say that I'm a big
-          fan of the app and would love to work for y'all!
+          Made with ♥ by a college student and Notion fanboy.
         </p>
+        <div>
+          <a
+            href="https://www.buymeacoffee.com/sakethr"
+            style={{ color: "#ffdd00" }}
+          >
+            Buy me a coffee
+          </a>
+        </div>
       </div>
     );
   }
